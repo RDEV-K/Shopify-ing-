@@ -1,0 +1,68 @@
+/* PDF VIEWER MODAL OVERLAY */
+.e-dlg-container {
+  position: fixed !important;
+  overflow: hidden !important;
+}
+
+#pdf_notify {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.lesson-table {
+  overflow-x: auto;
+}
+
+.supplier-table tbody tr td:last-child {
+  display: flex;
+  gap: 5px;
+}
+
+.modal-backdrop {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ml-25 {
+  margin-left: 5px;
+}
+
+/* FONT SIZE */
+* {
+  font-size: 16px !important;
+}
+
+div,
+span,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.btn.btn-fluid {
+  font-size: 16px !important;
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 14px !important;
+  }
+  div,
+  span,
+  a,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .btn,
+  .btn.btn-fluid {
+    font-size: 14px !important;
+  }
+}
