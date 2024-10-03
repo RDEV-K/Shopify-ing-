@@ -3445,6 +3445,13 @@ class WebAppController extends BaseController
         // $config->key = $key;
         $encrypter = $encryption->initialize($config);
         $this->encrypter = $encrypter;
+        // $this->session->remove($this->user_id . 'cart');
+        if($this->session->has($this->user_id . 'cart')) {
+            $this->items = $this->session->get($this->user_id . 'cart');
+        } else {
+            $this->items = [];
+            $this->items['totalQty'] = 0;
+        }
     }
 
     public function safeEncrypt(string $message)
