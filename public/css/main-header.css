@@ -1,0 +1,36 @@
+.dropdown-menu {
+    border-radius: 0px;
+}
+
+.orange {
+    color: #D85D0D;
+}
+
+.green {
+    color: #204E4A;
+}
+
+.dgrey {
+    color: #404040;
+}
+
+.lgrey {
+    color: #ECECEB;
+}
+
+.navbar-brand {
+    width: 100px;
+}
+
+.nav-link {
+    padding-top: 0;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-nav {
+    margin: 5px !important;
+}

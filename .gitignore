@@ -1,1 +1,4 @@
-/vendor
+writable
+app/Config/App.php
+vendor
+.env
