@@ -3489,4 +3489,18 @@ class WebAppController extends BaseController
     // Password //
 
     // Accounts //
+
+    public function manufacturing_ingredients_api_show() {
+        $apiController = new ApiController();
+        $ingredients = $apiController->fetchProducts();
+        $data = [
+            'ingredients' => $ingredients
+        ];
+        // dd($data['ingredients']);
+        echo view('templates/header', $this->subscription);
+        echo view('pages/manufacturing', $this->subscription);
+        echo view('pages/addCart', $this->items);
+        echo view('pages/manufacturing_ingredients_import_view', $data);
+        echo view('templates/footer');
+    }
 }
