@@ -3510,4 +3510,22 @@ class WebAppController extends BaseController
         echo view('pages/manufacturing_ingredients_import_view', $data);
         echo view('templates/footer');
     }
+
+    public function manufacturing_specific_ingredients_api_show($id) {
+        $apiController = new APiController();
+        $ingredient = $apiController->fetchProductById($id);
+        // dd($ingredient);
+        $data = [
+            'ingredient' => $ingredient
+        ];
+        $session = session();
+        // $apiController->deleteCart('gid://shopify/Cart/Z2NwLWV1cm9wZS13ZXN0MzowMUo5NEtHWllGQ1FCSjFKRFIwMTVTOEExNQ?key=b5c1eef2d881f674ba05134209d5fe5d');
+        // exit ;
+        // var_dump($session->get($this->user_id . 'cart')); exit;
+        echo view('templates/header', $this->subscription);
+        echo view('pages/manufacturing', $this->subscription);
+        echo view('pages/addCart', $this->items);
+        echo view('pages/manufacturing_specific_ingredient_import_view', $data);
+        echo view('templates/footer');
+    }
 }
