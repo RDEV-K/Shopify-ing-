@@ -3511,6 +3511,23 @@ class WebAppController extends BaseController
         echo view('templates/footer');
     }
 
+    public function manufacturing_ingredient_cart_edit() {
+        $data = $this->request->getPost();
+        $response = [];
+        $session = session();
+        $cart = $session->get($this->user_id . 'cart');
+        foreach($cart['items'] as $index => $item) {
+            if($item['id'] == $data['id']) {
+                $cart['qty'] = $cart['qty'] - $cart['items'][$index]['quantity'] + $data['quantity'];
+                $cart['items'][$index]['quantity'] = $data['quantity'];
+                $session->set($this->user_id . 'cart', $cart);
+                $response['success'] = true;
+                $response['message'] = 'Success';
+                return $this->response->setJSON($response);
+            }
+        }
+    }
+
     public function manufacturing_specific_ingredients_api_show($id) {
         $apiController = new APiController();
         $ingredient = $apiController->fetchProductById($id);
